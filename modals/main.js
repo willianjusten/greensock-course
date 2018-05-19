@@ -1,10 +1,15 @@
+// Modal Elements
 const modal = document.querySelector('.modal');
-const btnFadeIn = document.getElementById('fadeIn');
+
+// Buttons
 const btnClose = document.querySelector('.modal__close');
+const btnFadeIn = document.getElementById('fade-in');
 
-btnFadeIn.addEventListener('click', fadeIn);
+// Events
 btnClose.addEventListener('click', close);
+btnFadeIn.addEventListener('click', fadeIn);
 
+// Animation Functions
 function fadeIn() {
     TweenMax.to(modal, .5, { autoAlpha: 1 });
 }
