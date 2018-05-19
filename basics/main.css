@@ -41,6 +41,10 @@ header {
     margin: 0 20px 20px;
 }
 
+.link {
+    color: white;
+}
+
 pre {
     background: #f5f5f5;
     max-width: 100%;
