@@ -44,5 +44,6 @@ function fullScreen() {
 }
 
 function close() {
+    TweenMax.set([modal, modalClose, modalBox, modalHeader, modalTitle], { clearProps: 'all' });
     TweenMax.to(modal, .5, { autoAlpha: 0 });
 }
