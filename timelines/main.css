@@ -156,6 +156,15 @@ pre code {
     width: 75%;
 }
 
+button {
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 0 5px 30px;
+    padding: 10px 15px;
+}
+
 @media (max-width: 767px) {
     header {
         padding: 30px 10px;
@@ -169,5 +178,15 @@ pre code {
 
     .item {
         width: 80%;
+    }
+
+    .controls {
+        text-align: center;
+    }
+
+    button {
+        font-size: 16px;
+        margin: 15px 0;
+        padding: 5px;
     }
 }
