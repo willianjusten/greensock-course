@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Timeline Chaining</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <header id="header">
+        <a class="title-link" href="/timelines/">
+            <h1 class="title">Greensock Course</h1>
+        </a>
+        <h2 class="subtitle">Made with
+            <svg class="heart" viewBox="0 0 32 29.6" width="10" fill="#ec2e2e">
+                <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+                c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" />
+            </svg>
+            by Willian Justen | Guilherme Louro</h2>
+    </header>
+
+    <pre id="code"><code>
+const tl = new TimelineMax();
+
+tl.to( props )
+  .from( props )
+    </code></pre>
+
+    <section class="gallery">
+        <article class="item">
+            <div class="image"></div>
+            <div class="description">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </article>
+
+        <article class="item">
+            <div class="image"></div>
+            <div class="description">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </article>
+
+        <article class="item">
+            <div class="image"></div>
+            <div class="description">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </article>
+
+        <article class="item">
+            <div class="image"></div>
+            <div class="description">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </article>
+
+        <article class="item">
+            <div class="image"></div>
+            <div class="description">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </article>
+
+        <article class="item">
+            <div class="image"></div>
+            <div class="description">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </article>
+
+        <article class="item">
+            <div class="image"></div>
+            <div class="description">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </article>
+
+        <article class="item">
+            <div class="image"></div>
+            <div class="description">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </article>
+
+        <article class="item">
+            <div class="image"></div>
+            <div class="description">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </article>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+    <script>
+        const items = document.querySelectorAll('.item');
+        const title = document.querySelector('.title');
+        const subtitle = document.querySelector('.subtitle');
+        const code = document.getElementById('code');
+
+        const tl = new TimelineMax();
+
+        tl
+        .from(title, .5, {
+            x: 500,
+            opacity: 0
+        })
+        .from(subtitle, .5, {
+            x: -500,
+            opacity: 0
+        })
+        .from(code, .5, {
+            scale: 0,
+            opacity: 0
+        })
+        .staggerFrom(items, .5, {
+            scale: 0,
+            opacity: 0
+        }, .3);
+    </script>
+</body>
+
+</html>
