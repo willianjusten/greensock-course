@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,
+    Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+
+body {
+    align-items: center;
+    background-color: #00d2d3;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    padding: 60px 10px;
+}
+
+.title {
+    margin-bottom: 5px;
+    font-size: 4em;
+}
+
+.title-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.subtitle {
+    font-size: 1em;
+    margin-top: 15px;
+}
+
+.heading {
+    margin: 0 20px 20px;
+}
+
+pre {
+    background: #f5f5f5;
+    max-width: 100%;
+    padding: 1.25rem 2.5rem;
+    color: #fff;
+    margin-bottom: 1.875rem;
+    font-size: 1.3em;
+    color: rgb(61, 58, 53);
+    overflow: auto;
+}
+
+pre code {
+    overflow-x: scroll;
+}
+
+.gallery {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    width: 950px;
+    max-width: 100%;
+}
+
+.item {
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    color: #00d2d3;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    justify-content: space-around;
+    margin: 20px 15px;
+    padding: 10px;
+    width: 30%;
+    box-shadow: rgba(1, 163, 164, 1) 1px 1px,
+    rgba(1, 163, 164, 1) 2px 2px,
+    rgba(1, 163, 164, .9) 3px 3px,
+    rgba(1, 163, 164, .9) 4px 4px,
+    rgba(1, 163, 164, .8) 5px 5px,
+    rgba(1, 163, 164, .8) 6px 6px,
+    rgba(1, 163, 164, .7) 7px 7px,
+    rgba(1, 163, 164, .7) 8px 8px,
+    rgba(1, 163, 164, .6) 9px 9px,
+    rgba(1, 163, 164, .6) 10px 10px,
+    rgba(1, 163, 164, .5) 11px 11px,
+    rgba(1, 163, 164, .5) 12px 12px,
+    rgba(1, 163, 164, .4) 13px 13px,
+    rgba(1, 163, 164, .4) 14px 14px,
+    rgba(1, 163, 164, .3) 15px 15px,
+    rgba(1, 163, 164, .3) 16px 16px,
+    rgba(1, 163, 164, .2) 17px 17px,
+    rgba(1, 163, 164, .2) 18px 18px,
+    rgba(1, 163, 164, .1) 19px 19px,
+    rgba(1, 163, 164, .1) 20px 20px,
+    rgba(1, 163, 164, .09) 21px 21px,
+    rgba(1, 163, 164, .09) 22px 22px,
+    rgba(1, 163, 164, .08) 23px 23px,
+    rgba(1, 163, 164, .08) 24px 24px,
+    rgba(1, 163, 164, .07) 25px 25px,
+    rgba(1, 163, 164, .07) 26px 26px,
+    rgba(1, 163, 164, .06) 27px 27px,
+    rgba(1, 163, 164, .05) 28px 28px,
+    rgba(1, 163, 164, .04) 29px 29px,
+    rgba(1, 163, 164, .04) 30px 30px,
+    rgba(1, 163, 164, .03) 31px 31px,
+    rgba(1, 163, 164, .03) 32px 32px,
+    rgba(1, 163, 164, .03) 33px 33px,
+    rgba(1, 163, 164, .02) 34px 34px,
+    rgba(1, 163, 164, .02) 35px 35px,
+    rgba(1, 163, 164, .02) 36px 36px,
+    rgba(1, 163, 164, .01) 37px 37px,
+    rgba(1, 163, 164, .01) 38px 38px,
+    rgba(1, 163, 164, 0) 39px 39px;
+}
+
+.item a {
+    color: #00d2d3;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+.item a:hover {
+    color: #017d7d;
+}
+
+.image {
+    width: 90px;
+    height: 90px;
+    background-color: #dedcdc;
+    border: 10px solid #f3f2f2;
+    border-radius: 100%;
+}
+
+.description {
+    display: block;
+    width: 90%;
+}
+
+.description span {
+    background-color: #eee;
+    display: block;
+    height: 10px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.description span:last-child {
+    width: 75%;
+}
+
+@media (max-width: 767px) {
+    header {
+        padding: 30px 10px;
+    }
+    .title {
+        font-size: 2.5em;
+    }
+    .gallery {
+        width: 100%;
+    }
+
+    .item {
+        width: 80%;
+    }
+}
