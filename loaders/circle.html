@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Circle</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: #576574;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+</style>
+<body>
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="130" height="130">
+        <circle
+            class="circle"
+            fill="none"
+            stroke="#ff6b6b"
+            stroke-width="10"
+            stroke-dasharray="377"
+            stroke-dashoffset="377"
+            cx="65" cy="65" r="60"
+            transform="rotate(-90 65 65)"/>
+    </svg>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+    <script>
+        const circle = document.querySelector('.circle');
+
+        TweenMax.to(circle, 3, {
+            strokeDashoffset: 0,
+            ease: Sine.easeInOut,
+            repeat: -1,
+            yoyo: true
+        });
+    </script>
+</body>
+</html>
