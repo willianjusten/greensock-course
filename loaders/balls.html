@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Balls</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: black;
+    }
+
+    .loader {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .ball {
+        background: white;
+        height: 30px;
+        width: 30px;
+        display: inline-block;
+        border-radius: 50%;
+        margin: 10px;
+        position: relative;
+    }
+</style>
+<body>
+
+    <div class="loader">
+        <span class="ball"></span>
+        <span class="ball"></span>
+        <span class="ball"></span>
+        <span class="ball"></span>
+        <span class="ball"></span>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+    <script>
+        // staggerFromTo(target, time, { from }, { to }, staggerTime);
+
+        const balls = document.querySelectorAll('.ball');
+        TweenMax.staggerFromTo(balls, 1, {
+            scale: .1,
+            opacity: 0
+        }, {
+            scale: 1.2,
+            opacity: 1,
+            repeat: -1,
+            yoyo: true
+        }, .2);
+    </script>
+</body>
+</html>
