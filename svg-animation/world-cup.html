@@ -25,6 +25,21 @@
     svg {
         width: 80%;
     }
+
+    a {
+        font-family: sans-serif;
+        margin-top: 80px;
+        color: white;
+        border: 1px solid;
+        border-radius: 5px;
+        padding: 15px 20px;
+        cursor: pointer;
+    }
+
+    a:hover {
+        background: white;
+        color:#0F43C1;
+    }
 </style>
 <body>
     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 -40 643.402 469.057">
@@ -1071,6 +1086,8 @@
         </g>
     </svg>
 
+    <a id="restart">Restart animation</a>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
     <script>
         const background = document.getElementById('background');
@@ -1080,20 +1097,29 @@
         const leftVuvuzela = document.getElementById('left-vuvuzela');
         const trophy = document.getElementById('trophy');
         const title = document.querySelectorAll('#title g');
+        const restartButton = document.getElementById('restart');
 
         const tl = new TimelineMax();
+        const show = { scale: 0, opacity: 0 };
+        const alignCenterBottom = { transformOrigin: 'center bottom' };
+        const alignLeftBottom = {  transformOrigin: 'left bottom' };
+        const alignRightBottom = { transformOrigin: 'right bottom' };
 
         tl
             .staggerFrom(title, .5, { opacity: 0, y: 50}, -.05)
-            .from(trophy, .5, { scale: 0, opacity: 0, transformOrigin: 'center bottom' })
+            .from(trophy, .5, { ...show, ...alignCenterBottom })
             .add('vuvuzela', '-=0.2')
-            .from(rightVuvuzela, .3, { scale: 0, opacity: 0, transformOrigin: 'left bottom'}, 'vuvuzela')
-            .from(leftVuvuzela, .3, { scale: 0, opacity: 0, transformOrigin: 'right bottom'}, 'vuvuzela')
-            .from(background, .5, { scale: 0, opacity: 0, transformOrigin: 'center bottom'}, 'vuvuzela')
-            .from(rightFlag, .4, { scale: 0, opacity: 0, rotation: '-90deg', transformOrigin: 'left bottom'}, 'vuvuzela+=.2')
-            .from(leftFlag, .4, { scale: 0, opacity: 0, rotation: '90deg', transformOrigin: 'right bottom'}, 'vuvuzela+=.2')
-            .to(background, 1, { opacity: .4, scale: .95, transformOrigin: 'center bottom', repeat: -1, yoyo: true})
+            .from(rightVuvuzela, .3, { ...show, ...alignLeftBottom }, 'vuvuzela')
+            .from(leftVuvuzela, .3, { ...show, ...alignRightBottom }, 'vuvuzela')
+            .from(background, .5, { ...show, ...alignCenterBottom }, 'vuvuzela')
+            .from(rightFlag, .4, { ...show, rotation: '-90deg', ...alignLeftBottom }, 'vuvuzela+=.2')
+            .from(leftFlag, .4, { ...show, rotation: '90deg', ...alignRightBottom }, 'vuvuzela+=.2')
+            .from(restartButton, .3, { ...show })
+            .to(background, 1, { opacity: .4, scale: .95, ...alignCenterBottom, repeat: -1, yoyo: true})
 
+        restartButton.addEventListener('click', () => {
+            tl.restart();
+        });
     </script>
 </body>
 </html>
