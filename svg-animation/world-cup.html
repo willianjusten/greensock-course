@@ -1084,13 +1084,14 @@
         const tl = new TimelineMax();
 
         tl
-            .staggerFrom(title, .5, { opacity: 0, y: 50})
+            .staggerFrom(title, .5, { opacity: 0, y: 50}, -.05)
             .from(trophy, .5, { scale: 0, opacity: 0, transformOrigin: 'center bottom' })
-            .from(rightVuvuzela, .3, { scale: 0, opacity: 0, transformOrigin: 'left bottom'})
-            .from(leftVuvuzela, .3, { scale: 0, opacity: 0, transformOrigin: 'right bottom'})
-            .from(background, .5, { scale: 0, opacity: 0, transformOrigin: 'center bottom'})
-            .from(rightFlag, .4, { scale: 0, opacity: 0, rotation: '-90deg', transformOrigin: 'left bottom'})
-            .from(leftFlag, .4, { scale: 0, opacity: 0, rotation: '90deg', transformOrigin: 'right bottom'})
+            .add('vuvuzela', '-=0.2')
+            .from(rightVuvuzela, .3, { scale: 0, opacity: 0, transformOrigin: 'left bottom'}, 'vuvuzela')
+            .from(leftVuvuzela, .3, { scale: 0, opacity: 0, transformOrigin: 'right bottom'}, 'vuvuzela')
+            .from(background, .5, { scale: 0, opacity: 0, transformOrigin: 'center bottom'}, 'vuvuzela')
+            .from(rightFlag, .4, { scale: 0, opacity: 0, rotation: '-90deg', transformOrigin: 'left bottom'}, 'vuvuzela+=.2')
+            .from(leftFlag, .4, { scale: 0, opacity: 0, rotation: '90deg', transformOrigin: 'right bottom'}, 'vuvuzela+=.2')
             .to(background, 1, { opacity: .4, scale: .95, transformOrigin: 'center bottom', repeat: -1, yoyo: true})
 
     </script>
