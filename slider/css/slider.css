@@ -41,3 +41,33 @@
 .slider__text p {
     line-height: 5rem;
 }
+
+.slider__arrows {
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.slider__arrows--left,
+.slider__arrows--right {
+    color: #fff;
+    text-shadow: 1px 1px #666;
+    font-size: 3.5rem;
+    padding: 0 2rem;
+    cursor: pointer;
+    transition: transform .5s, opacity .5s;
+}
+
+.slider__arrows--left:hover {
+    opacity: .6;
+    transform: translateX(-5px);
+}
+
+.slider__arrows--right:hover {
+    opacity: .6;
+    transform: translateX(5px);
+}
