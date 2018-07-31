@@ -5,6 +5,7 @@
 }
 
 .slider {
+    font-family: 'Open Sans Condensed', sans-serif;
     width: 100vw;
     height: 100vh;
     position: relative;
@@ -25,3 +26,18 @@
 .slider__item:nth-child(1) { background-image: url(/images/1.jpg) }
 .slider__item:nth-child(2) { background-image: url(/images/2.jpg) }
 .slider__item:nth-child(3) { background-image: url(/images/3.jpg) }
+
+.slider__text {
+    font-size: 3rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 2px 2px #666;
+}
+
+.slider__text p:first-child {
+    font-size: 6rem;
+}
+
+.slider__text p {
+    line-height: 5rem;
+}
