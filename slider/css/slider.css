@@ -24,9 +24,9 @@
     background-position: center center;
 }
 
-.slider__item:nth-child(1) { background-image: url(/images/1.jpg) }
-.slider__item:nth-child(2) { background-image: url(/images/2.jpg) }
-.slider__item:nth-child(3) { background-image: url(/images/3.jpg) }
+.slider__item:nth-child(1) { background-image: url(../images/1.jpg) }
+.slider__item:nth-child(2) { background-image: url(../images/2.jpg) }
+.slider__item:nth-child(3) { background-image: url(../images/3.jpg) }
 
 .slider__text {
     font-size: 3rem;
