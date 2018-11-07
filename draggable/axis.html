@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Draggable Axis</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <header id="header">
+        <a class="title-link" href="/timelines/">
+            <h1 class="title">Greensock Course</h1>
+        </a>
+        <h2 class="subtitle">Made with
+            <svg class="heart" viewBox="0 0 32 29.6" width="10" fill="#ec2e2e">
+                <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+                c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" />
+            </svg>
+            by Willian Justen | Guilherme Louro</h2>
+    </header>
+
+    <pre id="code"><code>
+Draggable.create(target, {
+    type: 'x' // (x, y, rotation)
+})
+    </code></pre>
+
+    <section class="gallery">
+        <article class="item">
+            <div class="image"></div>
+            <div class="description">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </article>
+
+        <article class="item">
+            <div class="image"></div>
+            <div class="description">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </article>
+
+        <article class="item">
+            <div class="image"></div>
+            <div class="description">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </article>
+
+        <article class="item">
+            <div class="image"></div>
+            <div class="description">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </article>
+
+        <article class="item">
+            <div class="image"></div>
+            <div class="description">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </article>
+
+        <article class="item">
+            <div class="image"></div>
+            <div class="description">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </article>
+
+        <article class="item">
+            <div class="image"></div>
+            <div class="description">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </article>
+
+        <article class="item">
+            <div class="image"></div>
+            <div class="description">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </article>
+
+        <article class="item">
+            <div class="image"></div>
+            <div class="description">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </article>
+    </section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenLite.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/utils/Draggable.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/plugins/CSSPlugin.min.js"></script>
+
+<script>
+    const item = document.querySelectorAll('.item');
+
+    Draggable.create(item);
+</script>
+
+</body>
+
+</html>
