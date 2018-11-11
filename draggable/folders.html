@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Draggable - Folders</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background: rgb(171, 172, 172);
+        display: flex;
+    }
+
+    .container {
+        flex: 80%;
+    }
+
+    .folder {
+        max-width: 120px;
+        padding: 3%;
+        position: relative;
+        z-index: 2;
+    }
+
+    .trash {
+        background: url('./images/empty-trash.png');
+        width: 128px;
+        height: 128px;
+        position: absolute;
+        bottom: 80px;
+        right: 40px;
+        z-index: 1;
+    }
+
+    .trash.is-full {
+        background: url('./images/full-trash.png');
+    }
+
+    #empty {
+        position: absolute;
+        bottom: 20px;
+        right: 40px;
+        padding: 20px;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <img class="folder" src="./images/mac-folder.png" alt="Folder">
+        <img class="folder" src="./images/mac-folder.png" alt="Folder">
+        <img class="folder" src="./images/mac-folder.png" alt="Folder">
+        <img class="folder" src="./images/mac-folder.png" alt="Folder">
+    </div>
+
+    <div class="trash"></div>
+    <button id="empty">Esvaziar lixeira</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenLite.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/utils/Draggable.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/plugins/CSSPlugin.min.js"></script>
+
+<script>
+    const folders = document.querySelectorAll('.folder');
+    const trash = document.querySelector('.trash');
+    const emptyBtn = document.getElementById('empty');
+
+    Draggable.create(folders, {
+        onDragEnd: deleteFolder
+    });
+
+    function deleteFolder() {
+        if(this.hitTest(trash)) {
+            TweenLite.to(this.target, .5, {
+                opacity: 0,
+                scale: 0
+            });
+
+            trash.classList.add('is-full');
+        }
+    }
+
+    emptyBtn.addEventListener('click', function() {
+        trash.classList.remove('is-full');
+    });
+
+</script>
+</body>
+</html>
