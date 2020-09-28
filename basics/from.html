@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>TweenMax.from()</title>
+    <title>gsap.from()</title>
     <link rel="stylesheet" href="main.css">
 </head>
 
@@ -23,7 +23,7 @@
     </header>
 
     <pre id="code"><code>
-TweenMax.from(target, time, { properties })
+gsap.from(target, { duration, properties })
     </code></pre>
 
     <section class="gallery">
@@ -109,7 +109,7 @@ TweenMax.from(target, time, { properties })
         </article>
     </section>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script>
         const items = document.querySelectorAll('.item');
         const title = document.querySelector('.title');
@@ -117,11 +117,13 @@ TweenMax.from(target, time, { properties })
         // to => para (propriedades para o final)
         // from => vem de (propriedades de quando começa)
 
-        TweenMax.from(title, 2, {
+        gsap.from(title, {
+            duration: 2,
             scale: 0
         });
 
-        TweenMax.from(items, 2, {
+        gsap.from(items, {
+            duration: 2,
             y: 600
         });
 

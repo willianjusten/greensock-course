@@ -14,25 +14,25 @@ const Slider = {
     in: (index) => {
         const item = sliderItems[index];
         const texts = item.querySelectorAll('p')
-        const timeline = new TimelineMax();
-        
-        TweenMax.set(item, { scale: .9 });
-        TweenMax.set(item, { left: '-100vw' });
+        const timeline = gsap.timeline();
+
+        gsap.set(item, { scale: .9 });
+        gsap.set(item, { left: '-100vw' });
 
         timeline
-            .to(item, .5, { left: 0, delay: 1 })
-            .to(item, .5, { scale: 1 })
-            .staggerFrom(texts, .5, { y: 300, autoAlpha: 0, ease: Back.easeOut }, 0.2)
+            .to(item, { duration: .5, left: 0, delay: 1 })
+            .to(item, { duration: .5, scale: 1 })
+            .from(texts, { duration: .5, y: 300, autoAlpha: 0, ease: "back.out", stagger: 0.2 })
     },
 
     out: (index, nextIndex) => {
         const item = sliderItems[index];
         const texts = item.querySelectorAll('p')
-        const timeline = new TimelineMax();
+        const timeline = gsap.timeline();
         timeline
-            .staggerTo(texts, .5, { y: 300, autoAlpha: 0, ease: Back.easeIn }, '-0.5')
-            .to(item, .5, { scale: .9 })
-            .to(item, .5, { left: '100vw' })
+            .to(texts, { duration: .5, y: 300, autoAlpha: 0, ease: "back.in", stagger: '-0.5' })
+            .to(item, { duration: .5, scale: .9 })
+            .to(item, { duration: .5, left: '100vw' })
             .call(Slider.in, [nextIndex], this, '-=1.5')
             .set(texts, { clearProps: 'all' })
     },

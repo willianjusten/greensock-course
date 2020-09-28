@@ -174,8 +174,7 @@
     </svg>
 
 
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
 
     <script>
 
@@ -188,16 +187,17 @@
             const xPos = Math.random() * width - width/2;
             const yPos = Math.random() * height - height/2;
 
-            TweenMax.set(polygon, {
+            gsap.set(polygon, {
                 x: xPos,
                 y: yPos
             });
 
-            TweenMax.to(polygon, 2, {
+            gsap.to(polygon, {
+                duration: 2,
                 x: 0,
                 y: 0,
                 opacity: 1,
-                ease: Power3.easeInOut,
+                ease: "power3.inOut",
                 repeat: -1,
                 repeatDelay: .5,
                 yoyo: true

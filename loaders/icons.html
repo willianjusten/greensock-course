@@ -118,14 +118,15 @@
         </g>
     </svg>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script>
         const money = document.getElementById('money');
 
-        TweenMax.from(money, 2, {
+        gsap.from(money, {
+            duration: 2,
             scaleY: .8,
             transformOrigin: 'bottom center',
-            ease: Power0.easeOut,
+            ease: "power1.out",
             repeat: -1,
             yoyo: true
         });
@@ -134,26 +135,26 @@
         const right = document.getElementById('right');
         const left = document.getElementById('left');
 
-        // const tl = new TimelineMax({ repeat: -1, yoyo: true });
-        const tl = new TimelineMax({ repeat: -1 });
+        const tl = gsap.timeline({ repeat: -1 });
 
         tl
-            .from(stick, 2, { transformOrigin: 'center center', rotation: 25 }, 'first')
-            .from(left, 2, { y: '-100px'}, 'first')
-            .from(right, 2, { y: '100px'}, 'first')
+            .from(stick, { duration: 2, transformOrigin: 'center center', rotation: 25 }, 'first')
+            .from(left, { duration: 2, y: '-100px'}, 'first')
+            .from(right, { duration: 2, y: '100px'}, 'first')
             // sem o yoyo: true, podemos fazer com um segundo passo
-            .to(stick, 2, { transformOrigin: 'center center', rotation: 25 }, 'second')
-            .to(left, 2, { y: '-100px'}, 'second')
-            .to(right, 2, { y: '100px'}, 'second')
+            .to(stick, { duration: 2, transformOrigin: 'center center', rotation: 25 }, 'second')
+            .to(left, { duration: 2, y: '-100px'}, 'second')
+            .to(right, { duration: 2, y: '100px'}, 'second')
 
         const whell1 = document.getElementById('wheel-1');
         const whell2 = document.getElementById('wheel-2');
         const whell3 = document.getElementById('wheel-3');
 
-        TweenMax.to([whell1, whell2, whell3], 2, {
+        gsap.to([whell1, whell2, whell3], {
+            duration: 2,
             transformOrigin: 'center center',
             rotation: 360,
-            ease: Power0.easeOut,
+            ease: "power1.out",
             repeat: -1
         });
     </script>

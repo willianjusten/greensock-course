@@ -168,23 +168,23 @@
         </g>
     </svg>
 
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
 
     <script>
 
         const polarBear = document.querySelectorAll('#polar-bear > polygon');
 
-        TweenMax.staggerFrom(polarBear, 1.5, {
+        gsap.from(polarBear, {
+            duration: 1.5,
             scale: 0,
             opacity: 0,
             transformOrigin: 'center center',
-            ease: Elastic.easeInOut,
+            ease: "elastic.inOut",
             repeat: -1,
             repeatDelay: .3,
-            yoyo: true
-        }, .00475);
+            yoyo: true,
+            stagger: .00475
+        });
     </script>
 </body>
 </html>

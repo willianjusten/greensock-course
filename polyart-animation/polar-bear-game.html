@@ -199,20 +199,22 @@
         <a id="resume">Resume animation</a>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script>
         const polarBear = document.querySelectorAll('#polar-bear > polygon');
         const pause = document.getElementById('pause');
         const resume = document.getElementById('resume');
 
-        const tl = new TimelineMax();
+        const tl = gsap.timeline();
 
-        tl.staggerFrom(polarBear, 1.5, {
+        tl.from(polarBear, 1.5, {
+            duration: 1.5,
             scale: 0,
             opacity: 0,
             transformOrigin: 'center center',
-            ease: Elastic.easeInOut
-        }, .3);
+            ease: "elastic.inOut",
+            stagger: .3
+        });
 
         pause.addEventListener('click', () => {
             tl.pause();
