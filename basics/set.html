@@ -23,7 +23,7 @@
     </header>
 
     <pre id="code"><code>
-TweenMax.set(target, { properties })
+gsap.set(target, { properties })
     </code></pre>
 
     <section class="gallery">
@@ -109,11 +109,11 @@ TweenMax.set(target, { properties })
         </article>
     </section>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script>
         const items = document.querySelectorAll('.item');
 
-        TweenMax.set(items, {
+        gsap.set(items, {
             x: -100,
             y: 100,
             opacity: 0
@@ -121,7 +121,7 @@ TweenMax.set(target, { properties })
 
         const title = document.querySelector('.title');
 
-        TweenMax.set(title, {
+        gsap.set(title, {
             color: '#123456',
             x: 500
         });

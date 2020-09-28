@@ -30,7 +30,7 @@
     </section>
 
     <pre id="code"><code>
-const tl = new TimelineMax();
+const tl = gsap.timeline()
 
 tl.play();
 tl.pause();
@@ -122,7 +122,7 @@ tl.restart();
         </article>
     </section>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script>
         const items = document.querySelectorAll('.item');
         const title = document.querySelector('.title');
@@ -135,25 +135,30 @@ tl.restart();
         const normal = document.getElementById('normal');
         const restart = document.getElementById('restart');
 
-        const tl = new TimelineMax({ paused: true });
+        const tl = gsap.timeline({ paused: true });
 
         tl
-        .from(title, .5, {
+        .from(title, {
+            duration: .5,
             x: 500,
             opacity: 0
         })
-        .from(subtitle, .5, {
+        .from(subtitle, {
+            duration: .5,
             x: -500,
             opacity: 0
         })
-        .from(code, .5, {
+        .from(code, {
+            duration: .5,
             scale: 0,
             opacity: 0
         })
-        .staggerFrom(items, .5, {
+        .from(items, {
+            duration: .5,
             scale: 0,
-            opacity: 0
-        }, .3);
+            opacity: 0,
+            stagger: .3
+        });
 
         fast.addEventListener('click', function() {
             tl.timeScale(5);

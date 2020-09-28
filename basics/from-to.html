@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>TweenMax.fromTo()</title>
+    <title>gsap.fromTo()</title>
     <link rel="stylesheet" href="main.css">
 </head>
 
@@ -23,7 +23,7 @@
     </header>
 
     <pre id="code"><code>
-TweenMax.fromTo(target, time, { From properties }, { To properties })
+gsap.fromTo(target, { From properties }, {duration, To properties })
     </code></pre>
 
     <section class="gallery">
@@ -109,22 +109,15 @@ TweenMax.fromTo(target, time, { From properties }, { To properties })
         </article>
     </section>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script>
         const items = document.querySelectorAll('.item');
         const title = document.querySelector('.title');
 
-        // TweenMax.to(title, 2, {
-        //     x: 500
-        // });
-
-        // TweenMax.from(title, 2, {
-        //     x: -500
-        // });
-
-        TweenMax.fromTo(title, 5, {
+        gsap.fromTo(title, {
             x: -500
         }, {
+            duration: 5,
             x: 500
         })
     </script>

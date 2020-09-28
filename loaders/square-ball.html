@@ -31,11 +31,12 @@
 
     <div class="square-ball"></div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script>
         const squareBall = document.querySelector('.square-ball');
 
-        TweenMax.to(squareBall, 1, {
+        gsap.to(squareBall, {
+            duration: 1,
             rotation: '360deg',
             borderRadius: '50%',
             repeat: -1,

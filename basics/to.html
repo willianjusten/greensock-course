@@ -23,7 +23,7 @@
     </header>
 
     <pre id="code"><code>
-TweenMax.to(target, time, { properties })
+gsap.to(target, {duration, properties })
     </code></pre>
 
     <section class="gallery">
@@ -109,17 +109,19 @@ TweenMax.to(target, time, { properties })
         </article>
     </section>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script>
         const items = document.querySelectorAll('.item');
         const title = document.querySelector('.title');
 
-        TweenMax.to(title, 3, {
+        gsap.to(title, {
+            duration: 3,
             x: 500,
             opacity: 0
         });
 
-        TweenMax.to(items, 1, {
+        gsap.to(items, {
+            duration: 1,
             rotation: 360,
             scale: .4
         })

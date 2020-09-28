@@ -113,33 +113,38 @@ tl.to( props, '+=1' ) // delay
         </article>
     </section>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script>
         const items = document.querySelectorAll('.item');
         const title = document.querySelector('.title');
         const subtitle = document.querySelector('.subtitle');
         const code = document.getElementById('code');
 
-        const tl = new TimelineMax();
+        const tl = gsap.timeline();
 
         tl
-        .from(title, .5, {
+        .from(title, {
+            duration: .5,
             x: 500,
             opacity: 0
         })
         .add('titleAppear', '+=1')
-        .from(subtitle, .5, {
+        .from(subtitle, {
+            duration: .5,
             x: -500,
             opacity: 0
         }, 'titleAppear') // delay - positive relative
-        .from(code, .5, {
+        .from(code, {
+            duration: .5,
             scale: 0,
             opacity: 0
         }, 'titleAppear') // overlap - negative relative
-        .staggerFrom(items, .5, {
+        .from(items, .5, {
+            duration: .5,
             scale: 0,
-            opacity: 0
-        }, .3, 'titleAppear+=3'); // position absolute
+            opacity: 0,
+            stagger: .3
+        }, 'titleAppear+=3'); // position absolute
     </script>
 </body>
 

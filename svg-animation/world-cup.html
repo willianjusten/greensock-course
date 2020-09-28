@@ -1088,7 +1088,7 @@
 
     <a id="restart">Restart animation</a>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script>
         const background = document.getElementById('background');
         const rightFlag = document.getElementById('right-flag');
@@ -1099,23 +1099,23 @@
         const title = document.querySelectorAll('#title g');
         const restartButton = document.getElementById('restart');
 
-        const tl = new TimelineMax();
+        const tl = gsap.timeline();
         const show = { scale: 0, opacity: 0 };
         const alignCenterBottom = { transformOrigin: 'center bottom' };
         const alignLeftBottom = {  transformOrigin: 'left bottom' };
         const alignRightBottom = { transformOrigin: 'right bottom' };
 
         tl
-            .staggerFrom(title, .5, { opacity: 0, y: 50}, -.05)
-            .from(trophy, .5, { ...show, ...alignCenterBottom })
+            .from(title, { duration: .5, opacity: 0, y: 50, stagger: -.05 })
+            .from(trophy, { duration: .5, ...show, ...alignCenterBottom })
             .add('vuvuzela', '-=0.2')
-            .from(rightVuvuzela, .3, { ...show, ...alignLeftBottom }, 'vuvuzela')
-            .from(leftVuvuzela, .3, { ...show, ...alignRightBottom }, 'vuvuzela')
-            .from(background, .5, { ...show, ...alignCenterBottom }, 'vuvuzela')
-            .from(rightFlag, .4, { ...show, rotation: '-90deg', ...alignLeftBottom }, 'vuvuzela+=.2')
-            .from(leftFlag, .4, { ...show, rotation: '90deg', ...alignRightBottom }, 'vuvuzela+=.2')
-            .from(restartButton, .3, { ...show })
-            .to(background, 1, { opacity: .4, scale: .95, ...alignCenterBottom, repeat: -1, yoyo: true})
+            .from(rightVuvuzela, { duration: .3, ...show, ...alignLeftBottom }, 'vuvuzela')
+            .from(leftVuvuzela, { duration: .3, ...show, ...alignRightBottom }, 'vuvuzela')
+            .from(background, { duration: .5, ...show, ...alignCenterBottom }, 'vuvuzela')
+            .from(rightFlag, { duration: .4, ...show, rotation: '-90deg', ...alignLeftBottom }, 'vuvuzela+=.2')
+            .from(leftFlag, { duration: .4, ...show, rotation: '90deg', ...alignRightBottom }, 'vuvuzela+=.2')
+            .from(restartButton, { duration: .3, ...show })
+            .to(background, { duration: 1, opacity: .4, scale: .95, ...alignCenterBottom, repeat: -1, yoyo: true})
 
         restartButton.addEventListener('click', () => {
             tl.restart();

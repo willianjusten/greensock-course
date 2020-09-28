@@ -21,29 +21,29 @@ btnFullScreen.addEventListener('click', fullScreen);
 
 // Animation Functions
 function fadeIn() {
-    TweenMax.to(modal, .5, { autoAlpha: 1 });
+    gsap.to(modal, { duration: .5, autoAlpha: 1 });
 }
 
 function fadeInScale() {
-    TweenMax.set(modalBox, { scale: 0 });
-    TweenMax.to(modal, .5, { autoAlpha: 1 });
-    TweenMax.to(modalBox, 1, { scale: 1, delay: .5, ease: Elastic.easeOut });
+    gsap.set(modalBox, { scale: 0 });
+    gsap.to(modal, { duration: .5, autoAlpha: 1 });
+    gsap.to(modalBox, { duration: 1, scale: 1, delay: .5, ease: "elastic.out" });
 }
 
 function slideIn() {
-    TweenMax.to(modal, 0.5, { autoAlpha: 1 });
-    TweenMax.from(modalBox, 0.5, { autoAlpha: 0, top: 300 });
+    gsap.to(modal, { duration: 0.5, autoAlpha: 1 });
+    gsap.from(modalBox, { duration: 0.5, autoAlpha: 0, top: 300 });
 }
 
 function fullScreen() {
-    TweenMax.set(modal, { backgroundColor: '#fff', scale: 0 });
-    TweenMax.set(modalClose, { color: '#333' });
-    TweenMax.set([modalHeader, modalBox], { position: 'initial' });
-    TweenMax.set(modalTitle, { color: '#333', backgroundColor: '#fff' });
-    TweenMax.to(modal, .2, { autoAlpha: 1, scale: 1 });
+    gsap.set(modal, { backgroundColor: '#fff', scale: 0 });
+    gsap.set(modalClose, { color: '#333' });
+    gsap.set([modalHeader, modalBox], { position: 'initial' });
+    gsap.set(modalTitle, { color: '#333', backgroundColor: '#fff' });
+    gsap.to(modal, { duration: .2, autoAlpha: 1, scale: 1 });
 }
 
 function close() {
-    TweenMax.set([modal, modalClose, modalBox, modalHeader, modalTitle], { clearProps: 'all' });
-    TweenMax.to(modal, .5, { autoAlpha: 0 });
+    gsap.set([modal, modalClose, modalBox, modalHeader, modalTitle], { clearProps: 'all' });
+    gsap.to(modal, { duration: .5, autoAlpha: 0 });
 }

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>TweenMax.staggerFrom()</title>
+    <title>Stagger From</title>
     <link rel="stylesheet" href="main.css">
 </head>
 
@@ -23,7 +23,7 @@
     </header>
 
     <pre id="code"><code>
-TweenMax.staggerFrom(target, time, { properties }, stagger)
+gsap.from(target, {duration, properties, stagger })
     </code></pre>
 
     <section class="gallery">
@@ -109,15 +109,17 @@ TweenMax.staggerFrom(target, time, { properties }, stagger)
         </article>
     </section>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script>
         const items = document.querySelectorAll('.item');
 
-        TweenMax.staggerFrom(items, .5, {
+        gsap.from(items, {
+            duration: .5,
             scale: 0,
             opacity: 0,
-            ease: Bounce.easeIn
-        }, .3);
+            ease: "bounce.in",
+            stagger: .3
+        });
     </script>
 </body>
 
